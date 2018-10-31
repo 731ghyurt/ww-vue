@@ -4,7 +4,9 @@
     <mt-header fixed title="ww之vue项目"></mt-header>
     <!-- 这是主体部分 -->
     <div class="content">
-			<router-view></router-view>
+			<transition>
+				<router-view></router-view>
+			</transition>
 		</div>
     <!-- 这是底部导航 -->
     <nav class="mui-bar mui-bar-tab">
@@ -37,6 +39,14 @@ div {
 		.content {
 			// background-color: #fff;
 			padding-top: 40px;
+			.v-enter {
+				opacity: 0;
+				transform:translateX(100%);
+			}
+			.v-leave-to {
+				opacity: 0;
+				transform:translateX(-100%);
+			}
 		}
 }
   
