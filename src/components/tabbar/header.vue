@@ -9,13 +9,17 @@
         <!-- 这是nav部分 -->
         <div class="mui-content">
 		        <ul class="mui-table-view mui-grid-view mui-grid-9">
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                        <router-link to="/header/news/newlist">
 		                    <a href="#"><img src="../../assets/menu1.png" alt=""></a> 
-		                    <div class="mui-media-body">新闻资讯</div></a>
+		                    <div class="mui-media-body">新闻资讯</div>
+                        </router-link>
                     </li>
-                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4">
+                        <a href="#">
 		                   <a href="#"><img src="../../assets/menu2.png" alt=""></a>
-		                    <div class="mui-media-body">图片分享</div></a>
+		                    <div class="mui-media-body">图片分享</div>
+                        </a>
                     </li>
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-4"><a href="#">
 		                    <a href="#"><img src="../../assets/menu3.png" alt=""></a>
@@ -53,7 +57,8 @@
         methods:{
             //发送请求得到轮播图数据
             getbar(){
-                this.$http.get("http://localhost:5000/api/getlunbo").then(res=>{
+                //请求路径前面不能加/:加了之后是请求根路径
+                this.$http.get("api/getlunbo").then(res=>{
                 if (res.body.status == 0) {
                    this.datalist = res.body.message;
                 } else {

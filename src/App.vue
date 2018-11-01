@@ -37,8 +37,8 @@
 <style lang="less" scoped>
 div {
 		.content {
-			// background-color: #fff;
 			padding-top: 40px;
+			padding-bottom: 50px;
 			.v-enter {
 				opacity: 0;
 				transform:translateX(100%);
